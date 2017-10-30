@@ -17,22 +17,20 @@ class M_kuesioner extends CI_Model {
         $data = $this->db->query('SELECT * FROM jabatan WHERE id_jabatan > 1')->result_array();
         return $data;
     }
-    public function addKuesioner($pertanyaan, $keterangan, $kategori)
+    public function addKuesioner($pertanyaan, $kategori)
     {
         $kriteria = $this->db->query('SELECT * FROM kriteria WHERE kriteria = "'.$kategori.'"')->result_array();
         $data = array(
             'id_kuesioner' => null,
             'kuesioner' => $pertanyaan,
-            'keterangan' => $keterangan,
             'id_kriteria' => $kriteria[0]['id_kriteria']
         );
         $this->db->insert('kuesioner', $data);
     }
-    public function editKuesioner($id, $pertanyaan, $keterangan, $kategori)
+    public function editKuesioner($id, $pertanyaan, $kategori)
     {
         $kriteria = $this->db->query('SELECT * FROM kriteria WHERE kriteria = "'.$kategori.'"')->result_array();
         $this->db->set('kuesioner', $pertanyaan);
-        $this->db->set('keterangan', $keterangan);
         $this->db->set('id_kriteria', $kriteria[0]['id_kriteria']);
         $this->db->where('id_kuesioner', $id);
         $this->db->update('kuesioner');

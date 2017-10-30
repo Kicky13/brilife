@@ -24,9 +24,8 @@ class Kuesioner extends CI_Controller {
         $jabatan = strtolower($_POST['jabatan']);
         $tipe = $_POST['kategori'];
         $pertanyaan = $_POST['pertanyaan'];
-        $keterangan = $_POST['keterangan'];
         $kategori = $tipe.' '.$jabatan;
-        $this->m_kuesioner->addKuesioner($pertanyaan, $keterangan, $kategori);
+        $this->m_kuesioner->addKuesioner($pertanyaan, $kategori);
         redirect('/kuesioner');
     }
     public function formEditkuesioner($id)
@@ -40,9 +39,8 @@ class Kuesioner extends CI_Controller {
         $jabatan = strtolower($_POST['jabatan']);
         $tipe = $_POST['kategori'];
         $pertanyaan = $_POST['pertanyaan'];
-        $keterangan = $_POST['keterangan'];
         $kategori = $tipe.' '.$jabatan;
-        $this->m_kuesioner->editKuesioner($id, $pertanyaan, $keterangan, $kategori);
+        $this->m_kuesioner->editKuesioner($id, $pertanyaan, $kategori);
         redirect('/kuesioner');
     }
 }

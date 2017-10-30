@@ -59,10 +59,6 @@
                                     <input type="text" class="form-control" id="exampleInputEmail1"
                                            placeholder="Pertanyaan" name="pertanyaan" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Keterangan</label>
-                                    <textarea class="form-control" name="keterangan"></textarea>
-                                </div>
                             </div>
                     </div>
                     <!-- /.box-body -->
