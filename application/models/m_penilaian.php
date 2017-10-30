@@ -104,13 +104,16 @@ class M_penilaian extends CI_Model {
         $data = $this->db->query('SELECT *, TIMESTAMPDIFF(MONTH, tanggal_masuk, now()) AS lama_kerja FROM penilaian p JOIN karyawan k ON p.id_karyawan = k.id_karyawan JOIN jabatan j ON j.id_jabatan = k.id_jabatan JOIN gender g ON g.id_gender = k.id_gender WHERE p.id_karyawan = '.$id.' AND periode = "'.$periode.'"')->result_array();
         return $data[0];
     }
-    public function cekPenilaian($id, $periode)
+    public function cekPenilaian($id)
     {
+        $now = $this->getPeriodeinput();
+        $periode = $now['bulan'].'/'.$now['tahun'];
         $data = $this->db->query('SELECT * FROM penilaian WHERE id_karyawan = '.$id.' AND periode = "'.$periode.'"')->num_rows();
         return $data;
     }
-    public function addPenilaian($id, $periode, $mutu, $inisiatif, $kehadiran, $sikap, $pengetahuan, $prestasi, $komentar)
+    public function addPenilaian($id, $mutu, $inisiatif, $kehadiran, $sikap, $pengetahuan, $prestasi, $komentar)
     {
+        $periode = $this->getPeriodeinput();
         switch ($prestasi){
             case 'Baik':
             $index = 1;
@@ -125,7 +128,7 @@ class M_penilaian extends CI_Model {
         $data = array(
             'id_penilaian' => null,
             'id_karyawan' => $id,
-            'periode' => $periode,
+            'periode' => $periode['bulan'].'/'.$periode['tahun'],
             'mutu_kerja' => $mutu,
             'inisiatif' => $inisiatif,
             'kehadiran' => $kehadiran,

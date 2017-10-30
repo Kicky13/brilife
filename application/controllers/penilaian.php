@@ -101,17 +101,16 @@ class Penilaian extends CI_Controller {
     }
     public function addPenilaian($id)
     {
-        $periode = $_POST['periode'];
         $mutu = $_POST['mutu'];
         $inisiatif = $_POST['inisiatif'];
         $kehadiran = $_POST['kehadiran'];
         $sikap = $_POST['sikap'];
         $pengetahuan = $_POST['pengetahuan'];
         $prestasi = $_POST['prestasi'];
-        $komentar = $_POST['komentar'];
-        $cek = $this->m_penilaian->cekPenilaian($id, $periode);
+        $komentar = $_POST['prestasi'];
+        $cek = $this->m_penilaian->cekPenilaian($id);
         if ($cek == 0){
-            $this->m_penilaian->addPenilaian($id, $periode, $mutu, $inisiatif, $kehadiran, $sikap, $pengetahuan, $prestasi, $komentar);
+            $this->m_penilaian->addPenilaian($id, $mutu, $inisiatif, $kehadiran, $sikap, $pengetahuan, $prestasi, $komentar);
             $this->tabelPenilaian();
         } else {
             echo '<div class="alert alert-danger"><strong>Maaf!</strong>Nilai Karyawan Untuk Bulan ini Telah Di inputkan Sebelumnya</div>';

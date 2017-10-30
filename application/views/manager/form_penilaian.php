@@ -30,51 +30,9 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-
                         </div>
-                        <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" method="post"
-                              action="<?php echo base_url('index.php/penilaian/addPenilaian/' . $data['id_karyawan']); ?>">
-                            <!-- <div class="form-group">
-                                <label for="exampleInputEmail1">Periode Penilaian</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                       placeholder="Bulan Penilaian"
-                                       value="<?php echo $periode['bulan'] . '/' . $periode['tahun']; ?>" disabled>
-                                <input type="hidden" value="<?php echo $periode['bulan'] . '/' . $periode['tahun']; ?>"
-                                       name="periode">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Nomor Induk Pegawai</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                       placeholder="Nomor Induk Pegawai" disabled value="<?php echo $data['nip']; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInput">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="exampleInput"
-                                       placeholder="Nama Lengkap" disabled value="<?php echo $data['nama']; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInput">Tanggal Lahir</label>
-                                <input type="text" class="form-control" id="exampleInput"
-                                       placeholder="Tempat, Tanggal Lahir" disabled value="<?php echo $data['ttl']; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInput">Jenis Kelamin</label>
-                                <input type="text" class="form-control" id="exampleInput"
-                                       placeholder="Jenis Kelamin" disabled value="<?php echo $data['gender']; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInput">Jabatan</label>
-                                <input type="text" class="form-control" id="exampleInput"
-                                       placeholder="Jabatan" disabled value="<?php echo $data['jabatan']; ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInput">Lama Kerja</label>
-                                <input type="text" class="form-control" id="exampleInput"
-                                       placeholder="Lama Kerja" disabled
-                                       value="<?php echo $data['lama_kerja']; ?> Bulan">
-                            </div> -->
+                        <form role="form" method="post" action="<?php echo base_url('index.php/penilaian/addPenilaian/' . $data['id_karyawan']); ?>">
                             <div class="form-group">
                                 <label for="exampleInput">Mutu Kerja</label>
                                 <input type="number" min="0" class="form-control"
@@ -119,12 +77,6 @@
                                 <input type="text" class="form-control" id="prestasi"
                                        placeholder="Keterangan" name="prestasi" required>
                             </div>
-                            
-                            <!-- <div class="form-group">
-                                <label for="exampleInput">Keterangan</label>
-                                <input type="text" class="form-control"
-                                       placeholder="Keterangan" name="komentar">
-                            </div> -->
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
