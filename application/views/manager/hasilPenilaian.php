@@ -49,7 +49,7 @@
                                 <td><?php echo $row['jabatan']; ?></td>
                                 <td><?php echo $row['prestasi']; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url('index.php/penilaian/viewEditpenilaian/'.$row['id_karyawan']); ?>" class="btn btn-block btn-info btn-xs" type="button">Edit</a>
+                                    <a href="<?php echo base_url('index.php/penilaian/deleteNilai/'.$row['id_penilaian']); ?>" class="btn btn-block btn-danger btn-xs" type="button">Delete</a>
                                 </td>
                             </tr>
                             <?php } ?>

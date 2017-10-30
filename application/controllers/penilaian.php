@@ -166,4 +166,9 @@ class Penilaian extends CI_Controller {
         }
         $this->viewFormpenilaian($karyawan, $total);
     }
+    public function deleteNilai($id)
+    {
+        $this->m_penilaian->deleteNilai($id);
+        redirect('/penilaian/hasilPenilaian');
+    }
 }

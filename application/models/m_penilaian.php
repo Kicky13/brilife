@@ -327,4 +327,9 @@ class M_penilaian extends CI_Model {
       $data = $this->db->query('SELECT * FROM kuesioner k JOIN kriteria c ON c.id_kriteria = k.id_kriteria JOIN jabatan j ON j.id_jabatan = c.id_jabatan JOIN karyawan kr ON kr.id_jabatan = j.id_jabatan WHERE kr.id_karyawan = '.$karyawan.' AND j.id_jabatan = '.$jabatan.' GROUP BY k.id_kriteria')->result_array();
       return $data;
     }
+    public function deleteNilai($id)
+    {
+        $this->db->where('id_penilaian', $id);
+        $this->db->delete('penilaian');
+    }
 }
